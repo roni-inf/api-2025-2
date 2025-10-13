@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 3 packages to &apos;aula4/src/main/java/br.com.serratec&apos;&#x0D;&#x0A;- Original project: &apos;aula3-4&apos;&#x0D;&#x0A;- Destination element: &apos;aula4/src/main/java/br.com.serratec&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     aula3-4/src/main/java/br.com.serratec.repository&#x0D;&#x0A;     aula3-4/src/main/java/br.com.serratec.controller&#x0D;&#x0A;     aula3-4/src/main/java/br.com.serratec.entity" description="Copy packages" destination="=aula4/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;br.com.serratec" element1="/src\/main\/java&lt;br.com.serratec.repository" element2="/src\/main\/java&lt;br.com.serratec.controller" element3="/src\/main\/java&lt;br.com.serratec.entity" flags="589830" fragments="3" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1760131821549" version="1.0"/>
+</session>

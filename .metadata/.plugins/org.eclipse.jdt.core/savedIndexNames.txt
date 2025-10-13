@@ -1,0 +1,8 @@
+INDEX VERSION 1.134+C:\Users\roni_\Documents\API2025-2\.metadata\.plugins\org.eclipse.jdt.core
+3916307834.index
+782433131.index
+1590169572.index
+1865797976.index
+3615077595.index
+1917580449.index
+3351338590.index

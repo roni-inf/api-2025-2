@@ -1,0 +1,41 @@
+# ---------- Sistema ----------
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ---------- Logs, builds e binários ----------
+*.log
+*.tmp
+*.temp
+
+# Compiled class files
+*.class
+
+# Package files
+*.jar
+*.war
+*.ear
+*.nar
+*.zip
+*.tar.gz
+*.rar
+
+# Build directories (Maven / Gradle / common)
+target/
+build/
+out/
+dist/
+release/
+bin/
+
+# Maven
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-r

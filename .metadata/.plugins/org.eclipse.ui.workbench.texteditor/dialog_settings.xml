@@ -5,6 +5,7 @@
 		<item key="selection" value=""/>
 		<item key="replaceBarOpen" value="true"/>
 		<list key="findhistory">
+			<item value="clientes"/>
 			<item value="proprietario"/>
 			<item value="Proprietario"/>
 			<item value="veiculo"/>
@@ -12,6 +13,7 @@
 			<item value=""/>
 		</list>
 		<list key="replacehistory">
+			<item value="veiculos"/>
 			<item value="servico"/>
 			<item value="Servico"/>
 			<item value="manutencao"/>

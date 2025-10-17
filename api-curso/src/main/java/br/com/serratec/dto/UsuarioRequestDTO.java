@@ -1,6 +1,10 @@
 package br.com.serratec.dto;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import br.com.serratec.entity.Usuario;
+import br.com.serratec.entity.UsuarioPerfil;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
@@ -13,7 +17,9 @@ public class UsuarioRequestDTO {
 
 	@NotBlank
 	private String senha;
-
+	
+	private Set<UsuarioPerfil> usuarioPerfis = new HashSet<>();
+	
 	public UsuarioRequestDTO() {
 	}
 
@@ -23,6 +29,11 @@ public class UsuarioRequestDTO {
 		this.email = usuario.getEmail();
 		this.senha = usuario.getSenha();
 	}
+	
+	public Set<UsuarioPerfil> getUsuarioPerfis() {
+		return usuarioPerfis;
+	}
+
 
 	public String getNome() {
 		return nome;

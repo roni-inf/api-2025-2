@@ -28,6 +28,12 @@ public class Usuario {
 		return usuarioPerfis;
 	}
 
+	
+	@Override
+	public String toString() {
+		return "Id:" +id + "\n Nome:" + nome + "\nEmail:"+ email;
+	}
+	
 	public Long getId() {
 		return id;
 	}

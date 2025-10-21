@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import br.com.serratec.config.MailConfig;
 import br.com.serratec.dto.UsuarioRequestDTO;
 import br.com.serratec.dto.UsuarioResponseDTO;
 import br.com.serratec.entity.Usuario;
@@ -22,15 +23,18 @@ public class UsuarioService {
 
 	@Autowired
 	private UsuarioRepository repository;
-	
+
 	@Autowired
 	private UsuarioPerfilRepository usuarioPerfilRepository;
 
 	@Autowired
 	private BCryptPasswordEncoder encoder;
-	
+
 	@Autowired
 	private PerfilService perfilService;
+
+	@Autowired
+	private MailConfig mailConfig;
 
 	public List<UsuarioResponseDTO> listar() {
 		List<UsuarioResponseDTO> usuariosDTO = new ArrayList<>();
@@ -55,12 +59,14 @@ public class UsuarioService {
 		usuario = repository.save(usuario);
 
 		for (UsuarioPerfil up : usuarioRequestDTO.getUsuarioPerfis()) {
-			up.setUsuario(usuario);	
+			up.setUsuario(usuario);
 			up.setPerfil(perfilService.buscar(up.getPerfil().getId()));
 			up.setDataCriacao(LocalDate.now());
 		}
 		usuarioPerfilRepository.saveAll(usuarioRequestDTO.getUsuarioPerfis());
-		
+
+	//	mailConfig.enviarEmail(usuario.getEmail(), "Confirmação de Cadastro!", usuario.toString());
+
 		return new UsuarioResponseDTO(usuario.getId(), usuario.getNome(), usuario.getEmail());
 	}
 

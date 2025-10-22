@@ -13,6 +13,7 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
@@ -56,4 +57,17 @@ public class ControllerExceptionHandler extends ResponseEntityExceptionHandler {
 
 		return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(erroResposta);
 	}
+	
+	@ExceptionHandler(HttpClientErrorException.class)
+	protected ResponseEntity<Object>handleHttpClientErrorException(HttpClientErrorException ex){
+		List<String> erros = new ArrayList<>();
+		erros.add(ex.getMessage());
+		ErroResposta erroResposta = new ErroResposta(HttpStatus.NOT_FOUND.value(),
+				"Cep não encontrado!", LocalDateTime.now(), erros);
+
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(erroResposta);
+	}
+	
+	
+	
 }
